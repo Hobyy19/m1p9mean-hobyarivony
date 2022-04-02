@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+
+<section class="py-0 bg-primary-gradient">
+  
+    <div class="container">
+      <div class="row justify-content-center g-0">
+        <div class="col-xl-9">
+          <div class="col-lg-6 text-center mx-auto mb-3 mt-8 mb-md-5 mt-4">
+            <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">Ajouter un plat</h5>
+          </div>
+          <div class="row mb-8">
+            <div class="card card-span shadow-warning" style="border-radius: 35px;">
+                <div class="card-body py-5">
+                  <div class="row justify-content-evenly">
+                    <div class="tab-content mt-3" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            
+                            <form>
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Désignation</label>
+                                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Désignation">
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Tags</label>
+                                  <input type="tag" class="form-control" id="exampleInputPassword1" placeholder="Tags">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Catégorie</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Catégorie">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Prix brut</label>
+                                    <input type="double" class="form-control" id="exampleInputPassword1" placeholder="Prix brut">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Prix de vente</label>
+                                    <input type="double" class="form-control" id="exampleInputPassword1" placeholder="Prix de vente">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Créer</button>
+                            </form>
+                          
+                        </div>
+                    </div>
+    
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+<app-footer></app-footer>
