@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './security/login/login.component';
+import { InscriptionComponent } from './registration/inscription/inscription.component';
 
 import { PlatListeComponent } from './plat/plat-liste/plat-liste.component';
 import { PlatDetailsComponent } from './plat/plat-details/plat-details.component';
@@ -16,6 +17,7 @@ import { CommandeListeComponent } from './livreur/commande/commande-liste/comman
 const routes: Routes = [
   { path: '' , component: HomeComponent },
   { path: 'login' , component: LoginComponent },
+  { path: 'inscription' , component: InscriptionComponent },
   { path: 'plat/liste' , component: PlatListeComponent },
   { path: 'plat/details' , component: PlatDetailsComponent },
   { path: 'restaurant/plat/ajout' , component: PlatAjoutComponent },

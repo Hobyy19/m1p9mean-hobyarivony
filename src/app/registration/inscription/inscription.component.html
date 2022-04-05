@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+
+<section class="py-0 bg-primary-gradient">
+  
+    <div class="container">
+      <div class="row justify-content-center g-0">
+        <div class="col-xl-9">
+          <div class="col-lg-6 text-center mx-auto mb-3 mt-8 mb-md-5 mt-4">
+            <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">Inscription</h5>
+          </div>
+          <div class="row mb-8">
+            <div class="card card-span shadow-warning" style="border-radius: 35px;">
+                <div class="card-body py-5">
+                  <div class="row justify-content-evenly">
+                    <div class="tab-content mt-3" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            
+                            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                                <div class="form-group">
+                                  <label for="inputEmail">*Email address</label>
+                                  <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    <div
+                                        class="invalid-feedback"
+                                        *ngIf="submitted && myForm['email'].errors?.['required']"
+                                    >
+                                        L'email est requis
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputPassword">Password</label>
+                                  <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
+                                  <div
+                                  class="invalid-feedback"
+                                  *ngIf="submitted && myForm['password'].errors?.['required']"
+                                >
+                                  Veuillez choisir un mot de passe.
+                                </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                          
+                        </div>
+                    </div>
+    
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+<app-footer></app-footer>

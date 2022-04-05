@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {HttpClient} from '@angular/common/http'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { PanierComponent } from './commande/panier/panier.component';
 import { PlatAjoutComponent } from './plat/plat-ajout/plat-ajout.component';
 import { PlatRestaurantListeComponent } from './plat/plat-restaurant-liste/plat-restaurant-liste.component';
 import { CommandeListeComponent } from './livreur/commande/commande-liste/commande-liste.component';
+import { InscriptionComponent } from './registration/inscription/inscription.component';
 
 @NgModule({
   declarations: [
@@ -29,15 +31,15 @@ import { CommandeListeComponent } from './livreur/commande/commande-liste/comman
     PanierComponent,
     PlatAjoutComponent,
     PlatRestaurantListeComponent,
-    CommandeListeComponent
+    CommandeListeComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // HttpClient,
-    HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
