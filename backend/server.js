@@ -25,7 +25,7 @@ app.use(
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'dist/m1p9mean-hobyarivony')))
 app.use('/', express.static(path.join(__dirname, 'dist/m1p9mean-hobyarivony')))
-app.use('/api', employeeRoute)
+app.use('/api', userRoute)
 
 const port = process.env.PORT || 4000
 const server = app.listen(port, () => {
