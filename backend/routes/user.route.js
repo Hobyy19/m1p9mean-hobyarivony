@@ -14,6 +14,16 @@ userRoute.route('/create').post((req, res, next) => {
     })
 });
 
+userRoute.route('/login').post((req, res, next) => {
+    userRoute.find(req.body , (error , data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+})
+
 userRoute.route('/').get((req, res) => {
     User.find((error, data) => {
         if (error) {
