@@ -14,6 +14,12 @@ mongoose
 })
 
 const userRoute = require('../backend/routes/user.route')
+const platRoute = require('../backend/routes/plat.route')
+const commandeRoute = require('../backend/routes/commande.route')
+const livraisonRoute = require('../backend/routes/livraison.route')
+const commande_platRoute = require('../backend/routes/livraison.route')
+
+
 const app = express()
 app.use(bodyParser.json())
 app.use(
@@ -25,7 +31,12 @@ app.use(
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'dist/m1p9mean-hobyarivony')))
 app.use('/', express.static(path.join(__dirname, 'dist/m1p9mean-hobyarivony')))
-app.use('/api', userRoute)
+
+app.use('/api/user', userRoute)
+app.use('/api/plat', platRoute)
+app.use('/api/commande', commandeRoute)
+app.use('/api/livraison', livraisonRoute)
+app.use('/api/commande/plat', commande_platRoute)
 
 const port = process.env.PORT || 4000
 const server = app.listen(port, () => {
