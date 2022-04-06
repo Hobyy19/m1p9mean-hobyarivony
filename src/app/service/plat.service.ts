@@ -10,14 +10,14 @@ import {
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class PlatService {
 
-  baseUri: string = 'http://localhost:4000/api/user';
+  baseUri: string = 'http://localhost:4000/api/plat';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http : HttpClient) { }
 
-  createUser(data): Observable<any> {
+  createPlat(data): Observable<any> {
     let url = `${this.baseUri}/create`;
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }

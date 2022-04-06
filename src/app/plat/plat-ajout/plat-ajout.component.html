@@ -15,29 +15,25 @@
                     <div class="tab-content mt-3" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                             
-                            <form>
+                            <form [formGroup]="platForm" (ngSubmit)="onSubmit()">
                                 <div class="file-upload-wrapper">
                                   <input type="file" id="input-file-now" class="file-upload" />
                                 </div>
                                 <div class="form-group">
                                   <label for="exampleInputEmail1">Désignation</label>
-                                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Désignation">
-                                </div>
-                                <div class="form-group">
-                                  <label for="exampleInputPassword1">Tags</label>
-                                  <input type="tag" class="form-control" id="exampleInputPassword1" placeholder="Tags">
+                                  <input type="text" class="form-control" formControlName="designation" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Désignation">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Catégorie</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Catégorie">
+                                    <input type="text" class="form-control" formControlName="categorie" id="exampleInputPassword1" placeholder="Catégorie">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Prix brut</label>
-                                    <input type="double" class="form-control" id="exampleInputPassword1" placeholder="Prix brut">
+                                    <input type="double" class="form-control" formControlName="prix_brut" id="exampleInputPassword1" placeholder="Prix brut">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Prix de vente</label>
-                                    <input type="double" class="form-control" id="exampleInputPassword1" placeholder="Prix de vente">
+                                    <input type="double" class="form-control" formControlName="prix_vente" id="exampleInputPassword1" placeholder="Prix de vente">
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Créer</button>
