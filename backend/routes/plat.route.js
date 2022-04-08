@@ -24,6 +24,16 @@ platRoute.route('/').get((req, res) => {
     })
 });
 
+platRoute.route('/read/:id').get((req, res) => {
+    Plat.findById(req.params.id ,(error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+});
+
 platRoute.route('/update/:id').put((req, res, next) => {
     Plat.findByIdAndUpdate(req, params.id , {
         $set: req.body

@@ -7,6 +7,7 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,10 +16,23 @@ export class LoginService {
   baseUri: string = 'http://localhost:4000/api/user';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private http : HttpClient) { }
+  constructor( private http : HttpClient) { }
 
+
+  
   createUser(data): Observable<any> {
     let url = `${this.baseUri}/create`;
+    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+  }
+
+  setUser (data : any) {
+    localStorage.setItem('id',data._id); 
+    sessionStorage.setItem('email', data.email);
+    sessionStorage.setItem('nom', data.nom);
+  }
+
+  login(data): Observable<any> {
+    let url = `${this.baseUri}/login`;
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 

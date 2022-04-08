@@ -29,6 +29,7 @@ export class PlatAjoutComponent implements OnInit {
 
   mainForm(){
     this.platForm = this.fb.group({
+      img: [''], 
       designation: ['' , [Validators.required]],
       categorie: ['' , [Validators.required]],
       prix_brut: ['' , [Validators.required]],
@@ -47,7 +48,7 @@ export class PlatAjoutComponent implements OnInit {
     } else {
       return this.platService.createPlat(this.platForm.value).subscribe({
         complete: () => {
-          console.log('User inserted'),
+          console.log('Plat inserted'),
           this.ngZone.run(() => this.router.navigateByUrl('login'));
         } , 
         error: (e) => {

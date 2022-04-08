@@ -1,16 +1,16 @@
 <app-navbar></app-navbar>
 
-<section class="py-0 bg-primary-gradient">
+<section class="py-0 bg-primary-gradient" style="margin-top:50px;">
   
     <div class="container">
       <div class="row justify-content-center g-0">
         <div class="col-xl-9">
           <div class="col-lg-6 text-center mx-auto mb-3 mb-md-5 mt-4">
-            <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6"></h5>
+            <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">Liste des plats</h5>
           </div>
           <div class="row">
-            
-            <table class="table">
+            <p *ngIf="Plat.length <= 0" class="no-data text-center">Pas encore de plat pour l'instant!</p>
+            <table class="table" *ngIf="Plat.length > 0">
                 <thead class="thead-dark">
                   <tr>
                     <th scope="col">#</th>
@@ -21,27 +21,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr *ngFor="let plat of Plat; let i = index">
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
+                    <td><a [routerLink]="['/plat/details', plat._id]">{{plat.designation}}</a></td>
+                    <td>{{plat.prix_brut}} </td>
+                    <td>{{plat.prix_vente}}</td>
+                    <td>
+                      <span class="edit" [routerLink]="['/restaurant/plat', plat._id]">
+                        <button type="button" class="btn btn-success btn-sm">Edit</button>
+                      </span>
+                      <span class="delete" (click)="removePlat(plat, i)">
+                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                      </span>
+                    </td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@mdo</td>
-                  </tr>
+
                 </tbody>
               </table>
               

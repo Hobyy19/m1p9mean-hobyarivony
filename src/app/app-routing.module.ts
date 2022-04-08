@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'login' , component: LoginComponent },
   { path: 'inscription' , component: InscriptionComponent },
   { path: 'plat/liste' , component: PlatListeComponent },
-  { path: 'plat/details' , component: PlatDetailsComponent },
+  { path: 'plat/details/:id' , component: PlatDetailsComponent },
   { path: 'restaurant/plat/ajout' , component: PlatAjoutComponent },
   { path: 'restaurant/plat/liste' , component: PlatRestaurantListeComponent },
   { path: 'livreur/commande/liste' , component: CommandeListeComponent },

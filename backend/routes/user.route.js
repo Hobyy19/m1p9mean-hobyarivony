@@ -14,16 +14,6 @@ userRoute.route('/create').post((req, res, next) => {
     })
 });
 
-userRoute.route('/login').post((req, res, next) => {
-    userRoute.find(req.body , (error , data) => {
-        if (error) {
-            return next(error)
-        } else {
-            res.json(data)
-        }
-    })
-})
-
 userRoute.route('/').get((req, res) => {
     User.find((error, data) => {
         if (error) {
@@ -33,6 +23,19 @@ userRoute.route('/').get((req, res) => {
         }
     })
 })
+
+userRoute.route('/login').post((req , res, next) => {
+    User.find({email: req.body.email, password:req.body.password}, function(err, user) 
+    {
+        if (err)
+        {
+            res.send(err);
+        }
+        console.log(user);
+        res.json(user);
+
+    });
+});
 
 userRoute.route('/update/:id').put((req, res, next) => {
     User.findByIdAndUpdate(req, params.id , {

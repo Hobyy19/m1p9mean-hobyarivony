@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlatService } from 'src/app/service/plat.service';
 
 @Component({
   selector: 'app-panier',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanierComponent implements OnInit {
 
-  constructor() { }
+  plat = [];
+  constructor(private platService : PlatService) { }
 
   ngOnInit(): void {
+    this.getPlat();
+    console.log(this.plat);
+  }
+
+  getPlat(){
+    this.plat = this.platService.commande;
   }
 
 }
