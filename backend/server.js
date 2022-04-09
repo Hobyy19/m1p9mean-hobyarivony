@@ -38,7 +38,7 @@ app.use('/api/commande', commandeRoute)
 app.use('/api/livraison', livraisonRoute)
 app.use('/api/commande/plat', commande_platRoute)
 
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 3000
 const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
 })
