@@ -20,9 +20,8 @@ export class UserService {
 
   constructor(private http : HttpClient) { }
 
-  getRestaurantPlats(): Observable<any> {
-    let user = localStorage.getItem("id");
-    let url = `${this.baseUri}/`+user;
+  getRestaurantTop5(): Observable<any> {
+    let url = `${this.baseUri}/restaurant/top/5`;
     return this.http.get(url, { headers: this.headers }).pipe(
       map((res: Response) => {
         return res || {};

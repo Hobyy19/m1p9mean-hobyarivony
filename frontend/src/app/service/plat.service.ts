@@ -51,6 +51,19 @@ export class PlatService {
     );
   }
 
+  getPlatTop(): Observable<any> {
+    let url = `${this.baseUri}/top/10`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
+
+
+
   updatePlat(id, data): Observable<any> {
     let url = `${this.baseUri}/update/${id}`;
     return this.http

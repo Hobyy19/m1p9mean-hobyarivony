@@ -73,4 +73,17 @@ platRoute.route('/delete/:id').delete((req, res, next) => {
     })
 });
 
+platRoute.route('/top/10').get((req , res, next) => {
+    Plat.find({limit:8}, function(err, data) 
+    {
+        if (err)
+        {
+            res.send(err);
+        }
+        console.log(data);
+        res.json(data);
+
+    });
+});
+
 module.exports = platRoute
