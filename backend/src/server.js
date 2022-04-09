@@ -14,6 +14,9 @@ mongoose
     console.error('Error connecting to mongo', err.reason)
 })
 
+// NANAMPY ANITY AH
+app.use(require("./routes"));
+
 const userRoute = require('routes/user.route')
 const platRoute = require('routes/plat.route')
 const commandeRoute = require('routes/commande.route')
