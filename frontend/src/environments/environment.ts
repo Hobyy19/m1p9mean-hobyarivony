@@ -6,7 +6,8 @@ export const environment = {
   production: false
 };
 
-export const base_url = "http://localhost:3000/api/"
+// export const base_url = "http://localhost:3000/api/"
+export const base_url = "https://m1p9mean-hobyarivony.herokuapp.com/api/"
 
 
 /*
