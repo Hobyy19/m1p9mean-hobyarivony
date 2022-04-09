@@ -13,11 +13,11 @@ mongoose
     console.error('Error connecting to mongo', err.reason)
 })
 
-const userRoute = require('routes/user.route')
-const platRoute = require('routes/plat.route')
-const commandeRoute = require('routes/commande.route')
-const livraisonRoute = require('routes/livraison.route')
-const commande_platRoute = require('routes/livraison.route')
+const userRoute = require('../backend/routes/user.route')
+const platRoute = require('../backend/routes/plat.route')
+const commandeRoute = require('../backend/routes/commande.route')
+const livraisonRoute = require('../backend/routes/livraison.route')
+const commande_platRoute = require('../backend/routes/livraison.route')
 
 
 const app = express()
