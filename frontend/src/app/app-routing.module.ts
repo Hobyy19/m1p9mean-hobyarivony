@@ -12,6 +12,8 @@ import { PlatRestaurantListeComponent } from './plat/plat-restaurant-liste/plat-
 
 import { PanierComponent } from './commande/panier/panier.component';
 
+import { UtilisateurListeComponent } from './utilisateur/utilisateur-liste/utilisateur-liste.component';
+
 import { CommandeListeComponent } from './livreur/commande/commande-liste/commande-liste.component';
 
 const routes: Routes = [
@@ -24,6 +26,7 @@ const routes: Routes = [
   { path: 'restaurant/plat/liste' , component: PlatRestaurantListeComponent },
   { path: 'livreur/commande/liste' , component: CommandeListeComponent },
   { path: 'panier' , component: PanierComponent },
+  { path: 'utilisateur/liste' , component: UtilisateurListeComponent },
 ];
 
 @NgModule({

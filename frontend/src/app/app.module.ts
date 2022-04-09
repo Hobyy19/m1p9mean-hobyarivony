@@ -20,6 +20,7 @@ import { PlatRestaurantListeComponent } from './plat/plat-restaurant-liste/plat-
 import { CommandeListeComponent } from './livreur/commande/commande-liste/commande-liste.component';
 import { InscriptionComponent } from './registration/inscription/inscription.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { UtilisateurListeComponent } from './utilisateur/utilisateur-liste/utilisateur-liste.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
     PlatRestaurantListeComponent,
     CommandeListeComponent,
     InscriptionComponent,
-    SidebarComponent
+    SidebarComponent,
+    UtilisateurListeComponent
   ],
   imports: [
     BrowserModule,
