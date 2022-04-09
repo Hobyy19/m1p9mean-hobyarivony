@@ -12,7 +12,7 @@ export class PlatRestaurantListeComponent implements OnInit {
   Plat:any = [];
 
   constructor(private platService : PlatService , private toolsService : ToolsService) { 
-    // this.toolsService.isConnected();
+    this.toolsService.isConnected();
     this.readPlat();
   }
 
@@ -20,7 +20,7 @@ export class PlatRestaurantListeComponent implements OnInit {
   }
 
   readPlat(){
-    this.platService.getPlats().subscribe((data) => {
+    this.platService.getRestaurantPlats().subscribe((data) => {
       this.Plat = data;
      })   
   }

@@ -63,4 +63,17 @@ userRoute.route('/delete/:id').delete((req, res, next) => {
     })
 })
 
+userRoute.route('/restaurant/top/5').get((req , res, next) => {
+    User.find({profil: "Restaurant", limit:5}, function(err, data) 
+    {
+        if (err)
+        {
+            res.send(err);
+        }
+        console.log(data);
+        res.json(data);
+
+    });
+});
+
 module.exports = userRoute

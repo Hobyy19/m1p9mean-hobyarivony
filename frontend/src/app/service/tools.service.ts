@@ -9,7 +9,7 @@ export class ToolsService {
   constructor(private router : Router) { }
 
   checkConnection(): boolean{
-    if (localStorage.getItem('email') !== null ) {
+    if (localStorage.getItem('id') !== null ) {
       return true;
     } else {
         return false;

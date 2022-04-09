@@ -44,11 +44,12 @@ export class LoginComponent implements OnInit {
   // onSubmit(){
   //   this.submitted = true;
   //   if(!this.userForm.valid){
+  //     this.msg = "Veuillez revérifier vos données et réessayez.";
   //     return false;
   //   } else {
   //     return this.loginService.login(this.userForm.value).subscribe({
   //       complete: () => {
-  //         this.loginService.setUser(this.userForm.value);
+  //         // this.loginService.setUser(this.userForm.value);
   //         this.ngZone.run(() => this.router.navigateByUrl('restaurant/plat/liste'));
   //       } , 
   //       error: (e) => {
@@ -59,25 +60,53 @@ export class LoginComponent implements OnInit {
   // }
 
   onSubmit(){
-   
     this.submitted = true;
     if(!this.userForm.valid){
       this.msg = "Veuillez revérifier vos données et réessayez.";
       return false;
     } else {
-      return this.loginService.login(this.userForm.value).subscribe((data) => {
-        console.log("DATA : "+data);
-        console.log(data.email);
-        if (data.email){
-          console.log("Coucou");
-          this.loginService.setUser(data);
-          this.ngZone.run(() => this.router.navigateByUrl('restaurant/plat/liste'));
-        } else {
-          this.msg = "Email ou mot de passe invalide.";
+      return this.loginService.login(this.userForm.value).subscribe(
+        (res) => { 
+          if(res.length != 0) {
+            this.loginService.setUser(res[0]);
+            if(res[0].profil == "Restaurant"){
+              this.ngZone.run(() => this.router.navigateByUrl('restaurant/plat/liste'));
+            } else if ( res[0].profil == "Client"){
+              this.ngZone.run(() => this.router.navigateByUrl(''));
+            }
+            
+          } else {
+            this.msg = "Email ou mot de passe invalide.";
+          }
+
+        },
+        (err) => {
+          this.msg = err;
         }
-      });
+      );
     }
-  }
+  } 
+
+  // onSubmit(){
+   
+  //   this.submitted = true;
+  //   if(!this.userForm.valid){
+  //     this.msg = "Veuillez revérifier vos données et réessayez.";
+  //     return false;
+  //   } else {
+  //     return this.loginService.login(this.userForm.value).subscribe((data) => {
+  //       console.log("DATA : "+data);
+  //       console.log(data.email);
+  //       if (data.email){
+  //         console.log("Coucou");
+  //         this.loginService.setUser(data);
+  //         this.ngZone.run(() => this.router.navigateByUrl('restaurant/plat/liste'));
+  //       } else {
+  //         this.msg = "Email ou mot de passe invalide.";
+  //       }
+  //     });
+  //   }
+  // }
 
   // this.apiService.getEmployee(id).subscribe((data) => {
   //   this.editForm.setValue({

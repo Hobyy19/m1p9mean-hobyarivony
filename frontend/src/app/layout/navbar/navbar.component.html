@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
-    <div class="container"><a class="navbar-brand d-inline-flex" href="index.html"><img class="d-inline-block" src="assets/img/gallery/logo.svg" alt="logo" /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient">E-kaly</span></a>
+    <div class="container">
+      <a class="navbar-brand d-inline-flex" href="index.html"><img class="d-inline-block" src="assets/img/gallery/logo.svg" alt="logo" /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient">E-kaly</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
       <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
         <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
@@ -9,11 +10,28 @@
           <div class="input-group-icon pe-2"><i class="fas fa-search input-box-icon text-primary"></i>
             <input class="form-control border-0 input-box bg-100" type="search" placeholder="Rechercher" aria-label="Search" />
           </div>
-          
+
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" *ngIf="connected">Tableau de bord</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/restaurant/plat/liste']" *ngIf="connected">Liste des plats</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" *ngIf="connected">Profil</a>
+            </li>
+          </ul>
           <a [routerLink]="['/login']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="!connected"> <i class="fas fa-user me-2"></i>Connexion</a>
           <a [routerLink]="['/inscription']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="!connected"> <i class="fas fa-user me-2"></i>Inscription</a>
-          <a [routerLink]="['/login']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="! connected"> <i class="fas fa-user me-2"></i>Déconnexion</a>
+          <a [routerLink]="['/login']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="connected"> <i class="fas fa-user me-2"></i>Déconnexion</a>
         </form>
+        
       </div>
+
+      
     </div>
+
 </nav>
+
+

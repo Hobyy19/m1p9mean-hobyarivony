@@ -46,7 +46,9 @@ export class PlatAjoutComponent implements OnInit {
     if(!this.platForm.valid){
       return false;
     } else {
-      return this.platService.createPlat(this.platForm.value).subscribe({
+      let plat = this.platForm.value;
+      plat.id_user = localStorage.getItem('id');
+      return this.platService.createPlat(plat).subscribe({
         complete: () => {
           console.log('Plat inserted'),
           this.ngZone.run(() => this.router.navigateByUrl('login'));

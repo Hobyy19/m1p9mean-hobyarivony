@@ -5,8 +5,8 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 
 mongoose
-  // .connect('mongodb://127.0.0.1:27017/e-kaly')
-  .connect("mongodb+srv://e-kaly:e-kaly@cluster0.h7nxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+  .connect('mongodb://127.0.0.1:27017/e-kaly')
+  // .connect("mongodb+srv://e-kaly:e-kaly@cluster0.h7nxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

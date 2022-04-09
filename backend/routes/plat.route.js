@@ -24,6 +24,19 @@ platRoute.route('/').get((req, res) => {
     })
 });
 
+platRoute.route('/:user').get((req , res, next) => {
+    Plat.find({id_user: req.params.user}, function(err, data) 
+    {
+        if (err)
+        {
+            res.send(err);
+        }
+        console.log(data);
+        res.json(data);
+
+    });
+});
+
 platRoute.route('/read/:id').get((req, res) => {
     Plat.findById(req.params.id ,(error, data) => {
         if (error) {

@@ -3,11 +3,14 @@
 <section class="py-0 bg-primary-gradient" style="margin-top:50px;">
   
     <div class="container">
+      
+<!-- <app-sidebar></app-sidebar> -->
       <div class="row justify-content-center g-0">
         <div class="col-xl-9">
           <div class="col-lg-6 text-center mx-auto mb-3 mb-md-5 mt-4">
             <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">Liste des plats</h5>
           </div>
+          <a [routerLink]="['/restaurant/plat/ajout']" type="button" class="btn btn-success btn-sm">Ajouter un plat</a>
           <div class="row">
             <p *ngIf="Plat.length <= 0" class="no-data text-center">Pas encore de plat pour l'instant!</p>
             <table class="table" *ngIf="Plat.length > 0">
@@ -28,7 +31,7 @@
                     <td>{{plat.prix_vente}}</td>
                     <td>
                       <span class="edit" [routerLink]="['/restaurant/plat', plat._id]">
-                        <button type="button" class="btn btn-success btn-sm">Edit</button>
+                        <button type="button" class="btn btn-info btn-sm">Edit</button>
                       </span>
                       <span class="delete" (click)="removePlat(plat, i)">
                         <button type="button" class="btn btn-danger btn-sm">Delete</button>
