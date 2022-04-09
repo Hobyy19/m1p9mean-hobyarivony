@@ -7,7 +7,7 @@ export const environment = {
 };
 
 // export const base_url = "http://localhost:3000/api/"
-export const base_url = "https://m1p9mean-hobyarivony.herokuapp.com/api/"
+export const base_url = "https://m1p9mean-node-hobyarivony.herokuapp.com/api/"
 
 
 /*
