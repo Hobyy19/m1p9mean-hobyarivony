@@ -6,7 +6,6 @@ const bodyParser = require('body-parser')
 
 mongoose
   .connect('mongodb://127.0.0.1:27017/e-kaly')
-  // .connect("mongodb+srv://e-kaly:e-kaly@cluster0.h7nxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -14,14 +13,11 @@ mongoose
     console.error('Error connecting to mongo', err.reason)
 })
 
-// NANAMPY ANITY AH
-// app.use(require("./routes"));
-
-const userRoute = require('routes/user.route')
-const platRoute = require('routes/plat.route')
-const commandeRoute = require('routes/commande.route')
-const livraisonRoute = require('routes/livraison.route')
-const commande_platRoute = require('routes/livraison.route')
+const userRoute = require('../backend/routes/user.route')
+const platRoute = require('../backend/routes/plat.route')
+const commandeRoute = require('../backend/routes/commande.route')
+const livraisonRoute = require('../backend/routes/livraison.route')
+const commande_platRoute = require('../backend/routes/livraison.route')
 
 
 const app = express()
