@@ -8,16 +8,15 @@ import { PlatService } from 'src/app/service/plat.service';
 })
 export class PanierComponent implements OnInit {
 
-  plat = [];
+  commandes = [];
   constructor(private platService : PlatService) { }
 
   ngOnInit(): void {
-    this.getPlat();
-    console.log(this.plat);
+    this.getCommande();
   }
 
-  getPlat(){
-    this.plat = this.platService.commande;
+  getCommande(){
+    this.commandes = JSON.parse(sessionStorage.getItem('commande'));
   }
 
 }
