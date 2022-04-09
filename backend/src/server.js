@@ -15,7 +15,7 @@ mongoose
 })
 
 // NANAMPY ANITY AH
-app.use(require("./routes"));
+// app.use(require("./routes"));
 
 const userRoute = require('routes/user.route')
 const platRoute = require('routes/plat.route')
