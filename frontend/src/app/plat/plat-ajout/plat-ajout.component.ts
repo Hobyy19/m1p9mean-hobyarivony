@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { PlatService } from 'src/app/service/plat.service';
+import { ToolsService } from 'src/app/service/tools.service';
 
 @Component({
   selector: 'app-plat-ajout',
@@ -19,8 +20,10 @@ export class PlatAjoutComponent implements OnInit {
     public fb: FormBuilder,
     private router : Router,
     private ngZone: NgZone,
-    private platService: PlatService
+    private platService: PlatService,
+    private toolsService : ToolsService
   ) { 
+    this.toolsService.isConnected();
     this.mainForm();
   }
 

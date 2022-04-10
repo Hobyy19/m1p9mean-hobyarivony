@@ -13,24 +13,27 @@
 
           <ul class="nav justify-content-center">
             <li class="nav-item">
-              <a class="nav-link active" href="#" *ngIf="connected">Tableau de bord</a>
+              <a class="nav-link active" href="#" *ngIf="connected && (profil=='Administrateur' || profil=='Restaurant')">Tableau de bord</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" [routerLink]="['/user/commande/liste']" *ngIf="connected">Liste des commandes</a>
+              <a class="nav-link active" [routerLink]="['/user/commande/liste']" *ngIf="connected && profil=='Administrateur'">Liste des commandes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/restaurant/plat/liste']" *ngIf="connected">Liste des plats</a>
+              <a class="nav-link" [routerLink]="['/restaurant/plat/liste']" *ngIf="connected && profil=='Restaurant'">Liste des plats</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/panier']" *ngIf="connected">Panier</a>
+              <a class="nav-link" [routerLink]="['/plat/liste']" *ngIf="connected && profil=='Client'">Liste des plats</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/panier']" *ngIf="profil=='Client'">Panier</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" *ngIf="connected">Profil</a>
             </li>
           </ul>
           <a [routerLink]="['/login']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="!connected"> <i class="fas fa-user me-2"></i>Connexion</a>
-          <a [routerLink]="['/inscription']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="!connected"> <i class="fas fa-user me-2"></i>Inscription</a>
-          <button (click)="logout()" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="connected"> <i class="fas fa-user me-2"></i>Déconnexion</button>
+          <a [routerLink]="['/inscription']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="!connected"> <i class="fas fa-user-plus me-2"></i>Inscription</a>
+          <button (click)="logout()" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="connected"> <i class="fas fa-arrow-right-from-bracket me-2"></i>Déconnexion</button>
         </form>
         
       </div>

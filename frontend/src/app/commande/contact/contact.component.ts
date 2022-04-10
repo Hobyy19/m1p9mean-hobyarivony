@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CommandeService } from 'src/app/service/commande.service';
 import { CommandePlatService } from 'src/app/service/commande-plat.service';
+import { ToolsService } from 'src/app/service/tools.service';
 
 @Component({
   selector: 'app-contact',
@@ -21,8 +22,10 @@ export class ContactComponent implements OnInit {
     private router : Router,
     private ngZone: NgZone,
     private commandeService: CommandeService,
-    private commandePlatService : CommandePlatService
+    private commandePlatService : CommandePlatService,
+    private toolsService : ToolsService
   ) { 
+    this.toolsService.isConnected();
     this.mainForm();
   }
 

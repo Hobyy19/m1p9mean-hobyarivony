@@ -9,11 +9,12 @@ import { ToolsService } from 'src/app/service/tools.service';
 })
 export class NavbarComponent implements OnInit {
   connected = false;
+  profil ;
 
   constructor(private toolsService : ToolsService, private router : Router) { 
     if(this.toolsService.checkConnection()){
       this.connected = true;
-      console.log(this.connected);
+      this.profil = sessionStorage.getItem('profil');
     }
     
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommandeService } from 'src/app/service/commande.service';
+import { ToolsService } from 'src/app/service/tools.service';
 
 @Component({
   selector: 'app-commande-liste',
@@ -9,7 +10,9 @@ import { CommandeService } from 'src/app/service/commande.service';
 export class CommandeListeComponent implements OnInit {
 
   commandes ;
-  constructor(private commandeService : CommandeService) { }
+  constructor(private commandeService : CommandeService, private toolsService : ToolsService) { 
+    this.toolsService.isConnected();
+  }
 
   ngOnInit(): void {
     this.readCommandes();
