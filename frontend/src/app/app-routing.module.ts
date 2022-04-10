@@ -13,10 +13,12 @@ import { PlatRestaurantListeComponent } from './plat/plat-restaurant-liste/plat-
 import { PanierComponent } from './commande/panier/panier.component';
 import { ContactComponent } from './commande/contact/contact.component';
 import { UserCommandeComponent } from './commande/user-commande/user-commande.component';
+import { CommandeListeComponent} from './commande/commande-liste/commande-liste.component';
+import { CommandeDetailsComponent } from './commande/commande-details/commande-details.component';
 
 import { UtilisateurListeComponent } from './utilisateur/utilisateur-liste/utilisateur-liste.component';
 
-import { CommandeListeComponent } from './livreur/commande/commande-liste/commande-liste.component';
+
 
 const routes: Routes = [
   { path: '' , component: HomeComponent },
@@ -26,11 +28,13 @@ const routes: Routes = [
   { path: 'plat/details/:id' , component: PlatDetailsComponent },
   { path: 'restaurant/plat/ajout' , component: PlatAjoutComponent },
   { path: 'restaurant/plat/liste' , component: PlatRestaurantListeComponent },
-  { path: 'livreur/commande/liste' , component: CommandeListeComponent },
+  // { path: 'livreur/commande/liste' , component: CommandeListeComponent },
   { path: 'panier' , component: PanierComponent },
   { path: 'contact' , component: ContactComponent },
   { path: 'user/commande/liste' , component: UserCommandeComponent },
+  { path: 'admin/commande/liste' , component: CommandeListeComponent },
   { path: 'utilisateur/liste' , component: UtilisateurListeComponent },
+  { path: 'commande/details/:id' , component: CommandeDetailsComponent },
 ];
 
 @NgModule({

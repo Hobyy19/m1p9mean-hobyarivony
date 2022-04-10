@@ -3,15 +3,23 @@ const Schema = mongoose.Schema;
 
 let Commande = new Schema({
     id_user: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
     date_livraison: {
-        type: Date
+        type: String
     },
     lieu: {
         type: String
-    }
-}, {
+    },
+    statut: {
+        type: Number
+    },
+   contact: {
+       type: String
+   }
+},  { timestamps: true },
+{
     collection: 'commande'
 })
 module.exports = mongoose.model('Commande', Commande)

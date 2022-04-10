@@ -8,15 +8,15 @@ import { CommandeService } from 'src/app/service/commande.service';
 })
 export class CommandeListeComponent implements OnInit {
 
-  commandes = [];
+  commandes ;
   constructor(private commandeService : CommandeService) { }
 
   ngOnInit(): void {
+    this.readCommandes();
   }
 
   readCommandes(){
-    this.commandeService.getCommandeUser().subscribe((data) => {
-      console.log(data);
+    this.commandeService.getCommande().subscribe((data) => {
       this.commandes = data;
     })  
   }

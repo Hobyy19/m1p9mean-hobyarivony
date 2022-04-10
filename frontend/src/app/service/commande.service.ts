@@ -47,6 +47,16 @@ export class CommandeService {
     );
   }
 
+  getCommandeById(id): Observable<any> {
+    let url = `${this.baseUri}/read/${id}`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

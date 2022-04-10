@@ -24,6 +24,16 @@ export class CommandePlatService {
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 
+  getDetailsCommande(id_commande): Observable<any> {
+    let url = `${this.baseUri}/`+id_commande;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

@@ -3,15 +3,14 @@ const Schema = mongoose.Schema;
 
 let Commande = new Schema({
     id_commande: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Commande'
     },
     id_plat: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Plat'
     },
     qtt: {
-        type: Number
-    },
-    prix_unitaire: {
         type: Number
     }
 }, {

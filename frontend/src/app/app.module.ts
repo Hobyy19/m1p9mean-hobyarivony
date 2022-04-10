@@ -17,13 +17,14 @@ import { PlatDetailsComponent } from './plat/plat-details/plat-details.component
 import { PanierComponent } from './commande/panier/panier.component';
 import { PlatAjoutComponent } from './plat/plat-ajout/plat-ajout.component';
 import { PlatRestaurantListeComponent } from './plat/plat-restaurant-liste/plat-restaurant-liste.component';
-import { CommandeListeComponent } from './livreur/commande/commande-liste/commande-liste.component';
 import { InscriptionComponent } from './registration/inscription/inscription.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { UtilisateurListeComponent } from './utilisateur/utilisateur-liste/utilisateur-liste.component';
 import { ContactComponent } from './commande/contact/contact.component';
 import { UserCommandeComponent } from './commande/user-commande/user-commande.component';
 import { UserAjoutComponent } from './registration/user-ajout/user-ajout.component';
+import { CommandeListeComponent } from './commande/commande-liste/commande-liste.component';
+import { CommandeDetailsComponent } from './commande/commande-details/commande-details.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +38,14 @@ import { UserAjoutComponent } from './registration/user-ajout/user-ajout.compone
     PanierComponent,
     PlatAjoutComponent,
     PlatRestaurantListeComponent,
-    CommandeListeComponent,
     InscriptionComponent,
     SidebarComponent,
     UtilisateurListeComponent,
     ContactComponent,
     UserCommandeComponent,
-    UserAjoutComponent
+    UserAjoutComponent,
+    CommandeListeComponent,
+    CommandeDetailsComponent
   ],
   imports: [
     BrowserModule,

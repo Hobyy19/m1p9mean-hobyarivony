@@ -24,6 +24,19 @@ commande_platRoute.route('/').get((req, res) => {
     })
 });
 
+commande_platRoutee.route('/:commande').get((req, res) => {
+    Commande_plat.find({id_commande: req.params.commande}, function(err, data) 
+    {
+        if (err)
+        {
+            res.send(err);
+        }
+        console.log(data);
+        res.json(data);
+
+    });
+})
+
 commande_platRoute.route('/update/:id').put((req, res, next) => {
     Commande_plat.findByIdAndUpdate(req, params.id , {
         $set: req.body

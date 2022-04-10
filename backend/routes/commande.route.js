@@ -9,6 +9,7 @@ commandeRoute.route('/create').post((req, res, next) => {
         if (error) {
             return next(error)
         } else {
+            console.log(data)
             res.json(data)
         }
     })
@@ -22,6 +23,19 @@ commandeRoute.route('/').get((req, res) => {
             res.json(data)
         }
     })
+})
+
+commandeRoute.route('/:user').get((req, res) => {
+    Commande.find({id_user: req.params.user}, function(err, data) 
+    {
+        if (err)
+        {
+            res.send(err);
+        }
+        console.log(data);
+        res.json(data);
+
+    });
 })
 
 commandeRoute.route('/update/:id').put((req, res, next) => {
