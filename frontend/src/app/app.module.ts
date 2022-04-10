@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -53,7 +54,8 @@ import { CommandeDetailsComponent } from './commande/commande-details/commande-d
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgHttpLoaderModule.forRoot()
+    NgHttpLoaderModule.forRoot(),
+    NgxEchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
