@@ -54,9 +54,13 @@ export class ContactComponent implements OnInit {
         let plats = JSON.parse(sessionStorage.getItem('commande'));
 
         for(let i = 0; i<plats.length; i++){
-          plats[i].id_commande = res._id;
-          console.log(plats[i]);
-          this.addCommandePlat(plats[i]);
+          let plat = { id_commande : '', id_plat: '', qtt:0 } ;
+          plat.id_commande = res._id;
+          plat.id_plat = plats[i].plat;
+          plat.qtt = plats[i].qtt;
+
+          console.log(plat);
+          this.addCommandePlat(plat);
         }
 
         this.ngZone.run(() => this.router.navigateByUrl('panier'));

@@ -25,17 +25,11 @@
                 <tbody>
                   <tr *ngFor="let plat of Plat; let i = index">
                     <th scope="row">1</th>
-                    <td><a [routerLink]="['/plat/details', plat._id]">{{plat.designation}}</a></td>
-                    <td>{{plat.prix_brut}} </td>
-                    <td>{{plat.prix_vente}}</td>
-                    <td>
-                      <span class="edit" [routerLink]="['/restaurant/plat', plat._id]">
-                        <button type="button" class="btn btn-info btn-sm">Edit</button>
-                      </span>
-                      <span class="delete" (click)="removePlat(plat, i)">
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
-                      </span>
-                    </td>
+                    <td><a [routerLink]="['/plat/details', plat._id]">{{plat.id_plat.designation}}</a></td>
+                    <td>{{plat.id_plat.prix_brut}} </td>
+                    <td>{{plat.qtt}}</td>
+                    <td>{{plat.id_plat.prix_brut*plat.qtt}}</td>
+                      
                   </tr>
 
                 </tbody>

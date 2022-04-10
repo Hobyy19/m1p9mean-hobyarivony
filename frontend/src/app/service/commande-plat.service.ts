@@ -14,13 +14,15 @@ import { base_url } from 'src/environments/environment';
 })
 export class CommandePlatService {
 
-  baseUri: string = base_url+'commande/plat';
+  baseUri: string = base_url+'commande_plat';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http : HttpClient) { }
 
   createCommandePlat(data): Observable<any> {
     let url = `${this.baseUri}/create`;
+    console.log(url);
+    console.log(data);
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 

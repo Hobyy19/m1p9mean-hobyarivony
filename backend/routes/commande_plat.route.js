@@ -9,6 +9,7 @@ commande_platRoute.route('/create').post((req, res, next) => {
         if (error) {
             return next(error)
         } else {
+            console.log(data)
             res.json(data)
         }
     })
@@ -24,7 +25,7 @@ commande_platRoute.route('/').get((req, res) => {
     })
 });
 
-commande_platRoutee.route('/:commande').get((req, res) => {
+commande_platRoute.route('/:commande').get((req, res) => {
     Commande_plat.find({id_commande: req.params.commande}, function(err, data) 
     {
         if (err)

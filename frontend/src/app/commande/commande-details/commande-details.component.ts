@@ -20,6 +20,7 @@ export class CommandeDetailsComponent implements OnInit {
 
   getCommandePlat(id){
     this.commandePlatService.getDetailsCommande(id).subscribe((data) => {
+      console.log(data);
       this.Plat= data;
      })   
   }

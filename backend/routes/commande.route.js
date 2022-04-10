@@ -5,6 +5,7 @@ const commandeRoute = express.Router();
 let Commande = require('../models/Commande');
 
 commandeRoute.route('/create').post((req, res, next) => {
+    console.log("Commande test");
     Commande.create(req.body , (error, data) => {
         if (error) {
             return next(error)

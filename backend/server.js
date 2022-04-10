@@ -18,7 +18,7 @@ const userRoute = require('./routes/user.route')
 const platRoute = require('./routes/plat.route')
 const commandeRoute = require('./routes/commande.route')
 const livraisonRoute = require('./routes/livraison.route')
-const commande_platRoute = require('./routes/livraison.route')
+const commande_platRoute = require('./routes/commande_plat.route')
 
 
 const app = express()
@@ -37,7 +37,7 @@ app.use('/api/user', userRoute)
 app.use('/api/plat', platRoute)
 app.use('/api/commande', commandeRoute)
 app.use('/api/livraison', livraisonRoute)
-app.use('/api/commande/plat', commande_platRoute)
+app.use('/api/commande_plat', commande_platRoute)
 
 const port = process.env.PORT || 3000
 const server = app.listen(port, () => {
