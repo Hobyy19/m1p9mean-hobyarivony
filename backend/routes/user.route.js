@@ -4,11 +4,35 @@ const userRoute = express.Router();
 
 let User = require('../models/User');
 
+const nodemailer = require('nodemailer');
+
+
+
 userRoute.route('/create').post((req, res, next) => {
     User.create(req.body , (error, data) => {
         if (error) {
             return next(error)
         } else {
+            var transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                  user: 'arivonyhoby@gmail.com',
+                  pass: 'Arivony1234'
+                }
+            });
+            var mailOptions = {
+                from: 'arivonyhoby@gmail.com',
+                to: req.body.email,
+                subject: 'Bienvenu(e) sur E-kaly !',
+                text: 'Votre compte a été créer avec succès!'
+            };
+            transporter.sendMail(mailOptions, function(error, info){
+                if (error) {
+                  console.log(error);
+                } else {
+                  console.log('Email sent: ' + info.response);
+                }
+              }); 
             res.json(data)
         }
     })
