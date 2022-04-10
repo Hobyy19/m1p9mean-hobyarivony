@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
   constructor(private toolsService : ToolsService, private router : Router) { 
     if(this.toolsService.checkConnection()){
       this.connected = true;
+      console.log(this.connected);
     }
     
   }
@@ -23,7 +24,7 @@ export class NavbarComponent implements OnInit {
   logout(){
     localStorage.clear();
     sessionStorage.clear();
-    // this.router.navigateByUrl('');
+    this.router.navigateByUrl('');
   }
 
 }

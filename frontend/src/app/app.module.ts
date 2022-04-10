@@ -21,6 +21,9 @@ import { CommandeListeComponent } from './livreur/commande/commande-liste/comman
 import { InscriptionComponent } from './registration/inscription/inscription.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { UtilisateurListeComponent } from './utilisateur/utilisateur-liste/utilisateur-liste.component';
+import { ContactComponent } from './commande/contact/contact.component';
+import { UserCommandeComponent } from './commande/user-commande/user-commande.component';
+import { UserAjoutComponent } from './registration/user-ajout/user-ajout.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { UtilisateurListeComponent } from './utilisateur/utilisateur-liste/utili
     CommandeListeComponent,
     InscriptionComponent,
     SidebarComponent,
-    UtilisateurListeComponent
+    UtilisateurListeComponent,
+    ContactComponent,
+    UserCommandeComponent,
+    UserAjoutComponent
   ],
   imports: [
     BrowserModule,

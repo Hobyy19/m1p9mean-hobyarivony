@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<section class="py-0 bg-primary-gradient">
+  
+    <div class="container">
+      <div class="row justify-content-center g-0">
+        <div class="col-md-6">
+          <div class="col-md-6 text-center mx-auto mb-3 mt-8 mb-md-5 mt-4">
+            <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">Livraison</h5>
+          </div>
+          <div class="row mb-8">
+            <div class="card card-span shadow-warning" style="border-radius: 35px;">
+                <div class="card-body py-5">
+                  <div class="row justify-content-evenly">
+                    <div class="tab-content mt-3" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            
+                            <form [formGroup]="contactForm" (ngSubmit)="addCommande()">
+                                <div class="form-group">
+                                  <label for="inputEmail">Lieu</label>
+                                  <input type="text" class="form-control" formControlName="lieu" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Lieu">
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputEmail">Date et heure</label>
+                                  <input type="datetime-local" class="form-control" formControlName="date_livraison" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Date et heure">
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputPassword">Contact</label>
+                                  <input type="number" class="form-control" formControlName="contact" id="exampleInputPassword1" placeholder="Contact ">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Valider la commande</button>
+                            </form>
+                          
+                        </div>
+                    </div>
+    
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+<app-footer></app-footer>

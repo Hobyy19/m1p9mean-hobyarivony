@@ -11,6 +11,8 @@ import { PlatAjoutComponent } from './plat/plat-ajout/plat-ajout.component';
 import { PlatRestaurantListeComponent } from './plat/plat-restaurant-liste/plat-restaurant-liste.component';
 
 import { PanierComponent } from './commande/panier/panier.component';
+import { ContactComponent } from './commande/contact/contact.component';
+import { UserCommandeComponent } from './commande/user-commande/user-commande.component';
 
 import { UtilisateurListeComponent } from './utilisateur/utilisateur-liste/utilisateur-liste.component';
 
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'restaurant/plat/liste' , component: PlatRestaurantListeComponent },
   { path: 'livreur/commande/liste' , component: CommandeListeComponent },
   { path: 'panier' , component: PanierComponent },
+  { path: 'contact' , component: ContactComponent },
+  { path: 'user/commande/liste' , component: UserCommandeComponent },
   { path: 'utilisateur/liste' , component: UtilisateurListeComponent },
 ];
 
