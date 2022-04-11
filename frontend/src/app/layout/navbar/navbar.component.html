@@ -19,6 +19,9 @@
               <a class="nav-link active" [routerLink]="['/user/commande/liste']" *ngIf="connected && profil=='Client'">Liste des commandes</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link active" [routerLink]="['/commande/liste']" *ngIf="connected && profil=='Administrateur'">Liste des commandes</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" [routerLink]="['/restaurant/plat/liste']" *ngIf="connected && profil=='Restaurant'">Liste des plats</a>
             </li>
             <li class="nav-item">
