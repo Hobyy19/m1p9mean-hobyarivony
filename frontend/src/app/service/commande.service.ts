@@ -57,6 +57,13 @@ export class CommandeService {
     );
   }
 
+  updateCommande(id, data): Observable<any> {
+    let url = `${this.baseUri}/update/${id}`;
+    return this.http
+      .put(url, data, { headers: this.headers })
+      .pipe(catchError(this.errorMgmt));
+  }
+
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

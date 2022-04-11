@@ -20,6 +20,7 @@
                     <th scope="col">Lieu</th>
                     <th scope="col">Date de livraison</th>
                     <th scope="col">Contact</th>
+                    <th scope="col">Statut</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
@@ -29,6 +30,11 @@
                     <td>{{commande.lieu}} </td>
                     <td>{{commande.date_livraison}}</td>
                     <td>{{commande.contact}}</td>
+                    <td>
+                      <div class="badge badge-info" *ngIf="commande.statut == 0">Créer</div>
+                      <div class="badge badge-warning" *ngIf="commande.statut == 1">En cours</div>
+                      <div class="badge badge-success" *ngIf="commande.statut == 2">Complété</div>
+                    </td>
                     <td>
                       <span class="edit">
                         <button type="button" class="btn btn-info btn-sm">Edit</button>

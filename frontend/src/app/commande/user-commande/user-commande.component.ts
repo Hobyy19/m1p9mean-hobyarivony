@@ -11,12 +11,22 @@ export class UserCommandeComponent implements OnInit {
 
   commandes = [];
 
+  cols : any;
+  first : number = 0;
+
   constructor(private commandeService : CommandeService, private toolsService : ToolsService) { 
     this.toolsService.isConnected();
   }
 
   ngOnInit(): void {
     this.readCommandeUser();
+
+    this.cols = [
+      {field : '_id' , header : 'Référence'},
+      {field : 'lieu' , header : 'Lieu'},
+      {field : 'date_livraison' , header : 'Date et heure de livraison'},
+      {field : 'contact' , header : 'Contact'}
+    ];
   }
 
   readCommandeUser(){

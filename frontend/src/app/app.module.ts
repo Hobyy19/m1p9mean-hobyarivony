@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { TableModule} from 'primeng/table';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,7 @@ import { UserCommandeComponent } from './commande/user-commande/user-commande.co
 import { UserAjoutComponent } from './registration/user-ajout/user-ajout.component';
 import { CommandeListeComponent } from './commande/commande-liste/commande-liste.component';
 import { CommandeDetailsComponent } from './commande/commande-details/commande-details.component';
+import { LivreurCommandeComponent } from './commande/livreur-commande/livreur-commande.component';
 
 @NgModule({
   declarations: [
@@ -46,11 +48,13 @@ import { CommandeDetailsComponent } from './commande/commande-details/commande-d
     UserCommandeComponent,
     UserAjoutComponent,
     CommandeListeComponent,
-    CommandeDetailsComponent
+    CommandeDetailsComponent,
+    LivreurCommandeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    TableModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,

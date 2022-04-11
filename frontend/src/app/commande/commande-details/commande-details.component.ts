@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Commande } from 'src/app/model/commande';
 import { CommandePlatService } from 'src/app/service/commande-plat.service';
 import { CommandeService } from 'src/app/service/commande.service';
 import { LivraisonService } from 'src/app/service/livraison.service';
@@ -74,7 +75,7 @@ export class CommandeDetailsComponent implements OnInit {
       livraison = { 'id_user' : this.livraisonForm.value.livreur , 'id_commande' : this.idcommande};
       return this.livraisonService.createLivraison(livraison).subscribe(
         (res) => { 
-          
+          this.updateCommande();
         },
         (err) => {
           this.msg = err;
@@ -91,6 +92,19 @@ export class CommandeDetailsComponent implements OnInit {
 
   get myForm() {
     return this.livraisonForm.controls;
+  }
+
+  updateCommande(){
+    let commande : Commande;
+    commande.statut = 1;
+    return this.commandeService.updateCommande(this.idcommande , commande).subscribe(
+      (res) => { 
+        
+      },
+      (err) => {
+        this.msg = err;
+      }
+    );
   }
 
 }
