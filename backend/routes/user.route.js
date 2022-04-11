@@ -61,6 +61,19 @@ userRoute.route('/login').post((req , res, next) => {
     });
 });
 
+userRoute.route('/livreur').get((req, res) => {
+    User.find({profil: "Livreur"}, function(err, data) 
+    {
+        if (err)
+        {
+            res.send(err);
+        }
+        console.log(data);
+        res.json(data);
+
+    });
+});
+
 userRoute.route('/update/:id').put((req, res, next) => {
     User.findByIdAndUpdate(req, params.id , {
         $set: req.body

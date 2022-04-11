@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {  NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { User } from 'src/app/entities/user.model';
 import { LoginService } from 'src/app/service/login.service';
 
 @Component({

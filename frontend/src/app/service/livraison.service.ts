@@ -12,42 +12,16 @@ import { base_url } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class LivraisonService {
 
-  baseUri: string = base_url+'user';
+  baseUri: string = base_url+'livraison';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-
 
   constructor(private http : HttpClient) { }
 
-  getRestaurantTop5(): Observable<any> {
-    let url = `${this.baseUri}/restaurant/top/5`;
-    return this.http.get(url, { headers: this.headers }).pipe(
-      map((res: Response) => {
-        return res || {};
-      }),
-      catchError(this.errorMgmt)
-    );
-  }
-
-  getLivreur(): Observable<any> {
-    let url = `${this.baseUri}/livreur`;
-    return this.http.get(url, { headers: this.headers }).pipe(
-      map((res: Response) => {
-        return res || {};
-      }),
-      catchError(this.errorMgmt)
-    );
-  }
-
-  getAllUsers(): Observable<any> {
-    let url = `${this.baseUri}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
-      map((res: Response) => {
-        return res || {};
-      }),
-      catchError(this.errorMgmt)
-    );
+  createLivraison(data): Observable<any> {
+    let url = `${this.baseUri}/create`;
+    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 
   errorMgmt(error: HttpErrorResponse) {

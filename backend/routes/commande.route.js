@@ -39,7 +39,32 @@ commandeRoute.route('/:user').get((req, res) => {
     });
 })
 
+commandeRoute.route('/read/:id').get((req, res) => {
+    Commande.findById(req.params.id ,(error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            console.log(data)
+            res.json(data)
+        }
+    })
+});
+
 commandeRoute.route('/update/:id').put((req, res, next) => {
+    Commande.findByIdAndUpdate(req, params.id , {
+        $set: req.body
+    } , (error, data) => {
+        if (error) {
+            return next(error)
+            console.log(error)
+        } else {
+            res.json(data)
+            console.log('Data updated successfully')
+        }
+    })
+})
+
+commandeRoute.route('/update/statut/:type').put((req, res, next) => {
     Commande.findByIdAndUpdate(req, params.id , {
         $set: req.body
     } , (error, data) => {

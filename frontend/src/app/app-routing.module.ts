@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './security/login/login.component';
 import { InscriptionComponent } from './registration/inscription/inscription.component';
+import { UserAjoutComponent } from './registration/user-ajout/user-ajout.component';
 
 import { PlatListeComponent } from './plat/plat-liste/plat-liste.component';
 import { PlatDetailsComponent } from './plat/plat-details/plat-details.component';
@@ -24,17 +25,22 @@ const routes: Routes = [
   { path: '' , component: HomeComponent },
   { path: 'login' , component: LoginComponent },
   { path: 'inscription' , component: InscriptionComponent },
+  { path: 'utilisateur/ajout' , component: UserAjoutComponent },
+
   { path: 'plat/liste' , component: PlatListeComponent },
   { path: 'plat/details/:id' , component: PlatDetailsComponent },
   { path: 'restaurant/plat/ajout' , component: PlatAjoutComponent },
   { path: 'restaurant/plat/liste' , component: PlatRestaurantListeComponent },
   // { path: 'livreur/commande/liste' , component: CommandeListeComponent },
+
   { path: 'panier' , component: PanierComponent },
   { path: 'contact' , component: ContactComponent },
   { path: 'user/commande/liste' , component: UserCommandeComponent },
   { path: 'admin/commande/liste' , component: CommandeListeComponent },
-  { path: 'utilisateur/liste' , component: UtilisateurListeComponent },
   { path: 'commande/details/:id' , component: CommandeDetailsComponent },
+
+  { path: 'utilisateur/liste' , component: UtilisateurListeComponent },
+  
 ];
 
 @NgModule({

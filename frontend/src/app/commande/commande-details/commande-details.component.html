@@ -11,6 +11,59 @@
             <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">Détails de la commande</h5>
           </div>
           <div class="row">
+            <!-- <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">#12365887555</h5>
+                <ul>
+                  <li>Lieu : Ivandry</li>
+                  <li>Date et heure : 11/04/2022 13h00</li>
+                  <li>Contact : 0321245678</li>
+                  <li>Statut : Non attribué</li>
+                  <li>Livreur : <span class="badge bg-soft-danger p-2"><span class="fw-bold fs-1 text-danger"><a href="#">Attribuer</a></span></span></li>
+                </ul>
+                
+              </div>
+            </div> -->
+
+            <div class="card w-xxl-75">
+              <div class="card-body">
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active mb-3" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-motorcycle me-2"></i>Livraison</button>
+                  </div>
+                </nav>
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <ul>
+                  <li>Lieu : </li>
+                  <li>Date et heure : </li>
+                  <li>Contact : </li>
+                </ul>
+                <div class="tab-content mt-3" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <form class="row gx-2 gy-2 align-items-center" [formGroup]="livraisonForm" (ngSubmit)="attribuerLivreur()">
+                      <div class="col">
+                        <div class="input-group-icon">
+                          <label class="visually-hidden" for="inputDelivery">Livreur</label>
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Livreur</label>
+                            <select class="form-control" id="exampleFormControlSelect1" *ngFor="let l of Livreur" formControlName="livreur">
+                              <option value="{{l._id}}">{{l.nom}}&nbsp;|&nbsp;{{l.email}}</option>
+                            </select>
+                          </div>
+                          <!-- <input class="form-control input-box form-foodwagon-control" id="inputDelivery" type="text" placeholder="Sélectionner un livreur" /> -->
+                        </div>
+                      </div>
+                      <div class="d-grid gap-3 col-sm-auto">
+                        <button class="btn btn-danger" type="submit">Attribuer</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix" style="margin-bottom: 3px;"></div>
             <p *ngIf="Plat.length <= 0" class="no-data text-center">Pas encore de plat pour l'instant!</p>
             <table class="table" *ngIf="Plat.length > 0">
                 <thead class="thead-dark">
