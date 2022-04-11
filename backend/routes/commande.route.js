@@ -50,9 +50,9 @@ commandeRoute.route('/read/:id').get((req, res) => {
     })
 });
 
-commandeRoute.route('/update/:id').put((req, res, next) => {
+commandeRoute.route('/update/statut/:id').put((req, res, next) => {
     Commande.findByIdAndUpdate(req, params.id , {
-        $set: req.body
+        statut : 1
     } , (error, data) => {
         if (error) {
             return next(error)
@@ -64,10 +64,11 @@ commandeRoute.route('/update/:id').put((req, res, next) => {
     })
 })
 
-commandeRoute.route('/update/statut/:type').put((req, res, next) => {
+commandeRoute.route('/update/:id').put((req, res, next) => {
     Commande.findByIdAndUpdate(req, params.id , {
         $set: req.body
-    } , (error, data) => {
+    }
+    , (error, data) => {
         if (error) {
             return next(error)
             console.log(error)
