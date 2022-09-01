@@ -31,7 +31,7 @@ export class PlatService {
   }
 
   getPlat(id): Observable<any> {
-    let url = `${this.baseUri}/read/${id}`;
+    let url = `${this.baseUri}_user/read/${id}`;
     return this.http.get(url, { headers: this.headers }).pipe(
       map((res: Response) => {
         return res || {};

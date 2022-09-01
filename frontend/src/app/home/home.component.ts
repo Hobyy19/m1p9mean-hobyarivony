@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getTopResto();
     this.getTopPlat();
+
   }
 
   getTopResto(){
@@ -36,6 +37,7 @@ export class HomeComponent implements OnInit {
     return this.platService.getPlatTop().subscribe(
       (res) => { 
         this.plats = res;
+        console.log("test");
         console.log(res);
 
       },

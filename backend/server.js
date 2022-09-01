@@ -5,8 +5,8 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 
 mongoose
-  .connect('mongodb+srv://e-kaly:e-kaly@cluster0.f3m1a.mongodb.net/e-kaly?retryWrites=true&w=majority')
-  // .connect('mongodb://127.0.0.1:27017/e-kaly')
+  // .connect('mongodb+srv://e-kaly:e-kaly@cluster0.f3m1a.mongodb.net/e-kaly?retryWrites=true&w=majority')
+  .connect('mongodb://127.0.0.1:27017/e-kaly')
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -19,6 +19,8 @@ const platRoute = require('./routes/plat.route')
 const commandeRoute = require('./routes/commande.route')
 const livraisonRoute = require('./routes/livraison.route')
 const commande_platRoute = require('./routes/commande_plat.route')
+const testRoute = require('./routes/test.routes')
+const plat_userRoute = require('./routes/plat_user.route')
 
 
 const app = express()
@@ -30,6 +32,7 @@ app.use(
 )
 
 app.use(cors())
+app.use('/public', express.static('public'))
 app.use(express.static(path.join(__dirname, 'dist/m1p9mean-hobyarivony')))
 app.use('/', express.static(path.join(__dirname, 'dist/m1p9mean-hobyarivony')))
 
@@ -38,6 +41,8 @@ app.use('/api/plat', platRoute)
 app.use('/api/commande', commandeRoute)
 app.use('/api/livraison', livraisonRoute)
 app.use('/api/commande_plat', commande_platRoute)
+app.use('/api/plat_user', plat_userRoute)
+app.use('/api/test', testRoute)
 
 const port = process.env.PORT || 3000
 const server = app.listen(port, () => {

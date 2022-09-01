@@ -16,19 +16,20 @@
               <a class="nav-link active" href="#" *ngIf="connected && (profil=='Administrateur' || profil=='Restaurant')">Tableau de bord</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" [routerLink]="['/user/commande/liste']" *ngIf="connected && profil=='Client'">Liste des commandes</a>
+              <a class="nav-link active" [routerLink]="['/user/commande/liste']" *ngIf="connected && profil=='Client'">Commandes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" [routerLink]="['/admin/commande/liste']" *ngIf="connected && profil=='Administrateur'">Liste des commandes</a>
+              <a class="nav-link active" [routerLink]="['/admin/commande/liste']" *ngIf="connected && profil=='Administrateur'">Commandes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/restaurant/plat/liste']" *ngIf="connected && profil=='Restaurant'">Liste des plats</a>
+              <a class="nav-link" [routerLink]="['/restaurant/plat/liste']" *ngIf="connected && profil=='Restaurant'">Plats</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/plat/liste']" *ngIf="connected && profil=='Client'">Liste des plats</a>
+              <a class="nav-link" [routerLink]="['/plat/liste']" *ngIf="connected && profil=='Client'">Plats</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/panier']" *ngIf="profil=='Client'">Panier</a>
+              <!-- <a class="nav-link" [routerLink]="['/panier']" *ngIf="profil=='Client'">Panier</a> -->
+              <a class="nav-link" [routerLink]="['/panier']" >Panier</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/utilisateur/ajout']" *ngIf="profil=='Administrateur'">Ajouter un utilisateur</a>
@@ -37,9 +38,11 @@
               <a class="nav-link" href="#" *ngIf="connected">Profil</a>
             </li>
           </ul>
-          <a [routerLink]="['/login']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="!connected"> <i class="fas fa-user me-2"></i>Connexion</a>
-          <a [routerLink]="['/inscription']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="!connected"> <i class="fas fa-user-plus me-2"></i>Inscription</a>
-          <button (click)="logout()" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="connected"> <i class="fas fa-arrow-right-from-bracket me-2"></i>Déconnexion</button>
+          
+          <!-- <button (click)="logout()" class="btn btn-white shadow-warning text-warning" type="submit"><i class="fas fa-basket-shopping me-2"></i></button> -->
+          <!-- <a [routerLink]="['/login']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="!connected"> <i class="fas fa-user me-2"></i>Connexion</a> -->
+          <!-- <a [routerLink]="['/inscription']" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="!connected"> <i class="fas fa-user-plus me-2"></i>Inscription</a> -->
+          <!-- <button (click)="logout()" class="btn btn-white shadow-warning text-warning" type="submit" *ngIf="connected"> <i class="fas fa-arrow-right-from-bracket me-2"></i>Déco</button> -->
         </form>
         
       </div>

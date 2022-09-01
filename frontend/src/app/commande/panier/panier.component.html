@@ -13,7 +13,7 @@
             <table class="table">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">#</th>
+                    <!-- <th scope="col">#</th> -->
                     <th scope="col">Plat</th>
                     <th scope="col">Quantité</th>
                     <th scope="col">Prix unitaire</th>
@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let commande of commandes">
-                    <th scope="row">1</th>
+                    <!-- <th scope="row">1</th> -->
                     <td>{{commande.plat.designation}}</td>
                     <td>{{commande.qtt}}</td>
                     <td>{{commande.plat.prix_vente}}</td>
@@ -31,6 +31,8 @@
                   
                 </tbody>
               </table>
+
+              Total : {{ total }}
 
               <form (ngSubmit)="commander()">
                 <button type="submit" class="btn btn-primary">Commander</button>

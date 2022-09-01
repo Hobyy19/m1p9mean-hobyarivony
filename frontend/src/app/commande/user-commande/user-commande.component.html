@@ -42,7 +42,7 @@
                 </tbody>
               </table> -->
 
-              <p-table #dt [columns]="cols" [value]="commandes" [paginator]="true" [rows]="5" [first]="first" class="table table-hover">
+              <p-table #dt [columns]="cols" [value]="commandes" [paginator]="true" [rows]="5" [first]="first"2 class="table table-hover">
                 <ng-template pTemplate="caption">
                   <div style="text-align: right">        
                       <input class="form-control" type="text" pInputText size="30" placeholder="Rechercher" (input)="dt.filterGlobal($any($event).target.value, 'contains')" style="width:auto">

@@ -10,10 +10,15 @@ import { PlatService } from 'src/app/service/plat.service';
 export class PanierComponent implements OnInit {
 
   commandes = [];
+  total = 0;
   constructor(private platService : PlatService, private router : Router) { }
 
   ngOnInit(): void {
     this.getCommande();
+    for(let i = 0; i < this.commandes.length ; i++){
+      let commande = this.commandes[i];
+      this.total += commande.plat.prix_vente*commande.qtt
+    }
   }
 
   getCommande(){
@@ -21,11 +26,11 @@ export class PanierComponent implements OnInit {
   }
 
   commander(){
-    if(localStorage.getItem('id')!= null){
+    // if(localStorage.getItem('id')!= null){
       this.router.navigateByUrl('contact');
-    } else {
-      this.router.navigateByUrl('login');
-    }
+    // } else {
+    //   this.router.navigateByUrl('login');
+    // }
   }
 
 }
