@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 
 import { PlatService } from 'src/app/service/plat.service';
 import { ToolsService } from 'src/app/service/tools.service';
@@ -14,10 +14,10 @@ import { ToolsService } from 'src/app/service/tools.service';
 export class PlatAjoutComponent implements OnInit {
 
   submitted = false;
-  platForm: FormGroup;
+  platForm: UntypedFormGroup;
 
   constructor(
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     private router : Router,
     private ngZone: NgZone,
     private platService: PlatService,

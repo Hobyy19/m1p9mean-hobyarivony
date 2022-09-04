@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/service/login.service';
 
 @Component({
@@ -11,13 +11,13 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class LoginComponent implements OnInit {
   submitted = false;
-  userForm: FormGroup;
+  userForm: UntypedFormGroup;
   email : string = '';
   password : string = '';
   msg : string;
 
   constructor(
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     private router : Router,
     private ngZone: NgZone,
     private loginService: LoginService

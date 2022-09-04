@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Commande } from 'src/app/model/commande';
 import { CommandePlatService } from 'src/app/service/commande-plat.service';
@@ -17,11 +17,11 @@ export class CommandeDetailsComponent implements OnInit {
   Plat = [];
   commande : any;
   Livreur = []; 
-  livraisonForm : FormGroup;
+  livraisonForm : UntypedFormGroup;
   msg;
   idcommande : any;
 
-   constructor(public fb: FormBuilder,
+   constructor(public fb: UntypedFormBuilder,
     private commandePlatService : CommandePlatService , 
     private actRoute: ActivatedRoute, 
     private commandeService : CommandeService, 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { CommandeService } from 'src/app/service/commande.service';
 import { CommandePlatService } from 'src/app/service/commande-plat.service';
 import { ToolsService } from 'src/app/service/tools.service';
@@ -14,11 +14,11 @@ import { ToolsService } from 'src/app/service/tools.service';
 export class ContactComponent implements OnInit {
 
   submitted = false;
-  contactForm: FormGroup;
+  contactForm: UntypedFormGroup;
   msg;
 
   constructor(
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     private router : Router,
     private ngZone: NgZone,
     private commandeService: CommandeService,
